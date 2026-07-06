@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সিকারা সীরাত স্টাডি পোর্টাল | Sikara Seerah Study Portal</title>
+    
+    <!-- Google Fonts for Premium Bengali and English Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="bg-pattern"></div>
+    <div class="bg-glow"></div>
+
+    <div class="container">
+        <!-- ================= HOME SCREEN ================= -->
+        <main id="home-screen" class="screen active">
+            <!-- Header Section -->
+            <header class="home-header">
+                <div class="logo-container">
+                    <img src="logo.svg" alt="Sikara Logo" class="app-logo" onerror="this.onerror=null; this.src='logo.png';">
+                </div>
+                <h1 class="main-title">সিকারা সীরাত স্টাডি পোর্টাল</h1>
+                <p class="main-subtitle">নবীজি সাল্লাল্লাহু আলাইহি ওয়াসাল্লাম-এর পবিত্র জীবনচরিত অধ্যায়ন</p>
+                <div class="header-divider"></div>
+            </header>
+
+            <!-- Grid Cards for Section Selection -->
+            <section class="group-grid">
+                <!-- Junior Section Card -->
+                <button class="group-card" id="card-junior" aria-label="জুনিয়ার সেকশন">
+                    <div class="card-pattern"></div>
+                    <div class="card-icon">
+                        <i class="fa-solid fa-child-reaching"></i>
+                    </div>
+                    <div class="card-info">
+                        <span class="group-badge">প্লে - ২য় শ্রেণী</span>
+                        <h2 class="card-title">জুনিয়ার সেকশন</h2>
+                        <p class="card-desc">ছোট সোনামণিদের জন্য সহজ, আকর্ষণীয় ও শিক্ষণীয় সীরাত প্রশ্নোত্তর।</p>
+                    </div>
+                    <div class="card-arrow">
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                    </div>
+                </button>
+
+                <!-- Senior Section Card -->
+                <button class="group-card" id="card-senior" aria-label="সিনিয়র সেকশন">
+                    <div class="card-pattern"></div>
+                    <div class="card-icon">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                    </div>
+                    <div class="card-info">
+                        <span class="group-badge">৩য় - ১০ম শ্রেণী</span>
+                        <h2 class="card-title">সিনিয়র সেকশন</h2>
+                        <p class="card-desc">কিশোর-কিশোরীদের উপযোগী সীরাতের ঐতিহাসিক ঘটনাবলী ও গভীর জ্ঞান।</p>
+                    </div>
+                    <div class="card-arrow">
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                    </div>
+                </button>
+
+                <!-- Teacher & Guardian Card -->
+                <button class="group-card" id="card-teacher" aria-label="শিক্ষক ও অভিভাবক গ্রুপ">
+                    <div class="card-pattern"></div>
+                    <div class="card-icon">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <div class="card-info">
+                        <span class="group-badge">পূর্ণাঙ্গ প্রশ্নভাণ্ডার</span>
+                        <h2 class="card-title">শিক্ষক ও অভিভাবক</h2>
+                        <p class="card-desc">সীরাত চর্চার পূর্ণাঙ্গ গাইডলাইন এবং সকল বয়সের উপযোগী প্রশ্নভাণ্ডার।</p>
+                    </div>
+                    <div class="card-arrow">
+                        <i class="fa-solid fa-circle-chevron-right"></i>
+                    </div>
+                </button>
+            </section>
+
+            <!-- Footer -->
+            <footer class="app-footer">
+                <p>&copy; 2026 সিকারা সীরাত স্টাডি পোর্টাল। সর্বস্বত্ব সংরক্ষিত।</p>
+            </footer>
+        </main>
+
+        <!-- ================= SUGGESTION VIEW SCREEN ================= -->
+        <main id="suggestion-screen" class="screen">
+            <!-- Screen Header -->
+            <header class="suggestion-header">
+                <div class="header-left">
+                    <button class="back-text-btn" id="btn-header-back">
+                        <i class="fa-solid fa-arrow-left-long"></i> ড্যাশবোর্ড
+                    </button>
+                </div>
+                <div class="header-center">
+                    <span id="active-group-title" class="active-group-title">গ্রুপ নাম</span>
+                </div>
+                <div class="header-right">
+                    <div class="progress-pill">
+                        <span id="progress-text">প্রশ্ন ০ / ০</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
+            </div>
+
+            <!-- Split-Pane Layout -->
+            <div class="split-pane">
+                <!-- Left Pane: Dynamic AI Image Visual Display -->
+                <div class="pane-visual">
+                    <div class="image-wrapper">
+                        <!-- Custom Gold Crescent Loading Spinner -->
+                        <div class="image-loading" id="image-loading">
+                            <div class="spinner-container">
+                                <div class="crescent-spinner"></div>
+                                <i class="fa-solid fa-star spinner-star"></i>
+                            </div>
+                            <span class="loading-label">ছবি তৈরি হচ্ছে...</span>
+                        </div>
+                        
+                        <!-- Main AI Image -->
+                        <img id="ai-image" src="" alt="Seerah Illustration" class="ai-image">
+                        
+                        <!-- Overlay prompt indicator -->
+                        <button class="prompt-toggle-btn" id="btn-prompt-toggle" title="AI Prompt Details">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Prompt
+                        </button>
+                    </div>
+                    
+                    <!-- Expandable Prompt Box -->
+                    <div class="prompt-box" id="prompt-box">
+                        <div class="prompt-box-header">
+                            <span><i class="fa-solid fa-robot"></i> AI Image Generation Prompt</span>
+                            <button id="btn-prompt-close" class="prompt-close"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        <p id="prompt-content" class="prompt-content">Prompt details go here...</p>
+                    </div>
+                </div>
+
+                <!-- Right Pane: Content Display (Question and Answer) -->
+                <div class="pane-content">
+                    <div class="card question-card">
+                        <div class="card-accent-line"></div>
+                        <span class="card-label">প্রশ্ন (Question)</span>
+                        <h2 id="question-text" class="question-text">প্রশ্ন লোড হচ্ছে...</h2>
+                    </div>
+
+                    <div class="card answer-card" id="answer-card">
+                        <div class="card-accent-line"></div>
+                        <div class="answer-header">
+                            <span class="card-label">উত্তর (Answer)</span>
+                            <button class="reveal-btn" id="btn-reveal-answer" title="উত্তর দেখুন">
+                                <i class="fa-solid fa-eye"></i> উত্তর প্রকাশ করুন
+                            </button>
+                        </div>
+                        <div class="answer-content-wrapper" id="answer-content-wrapper">
+                            <p id="answer-text" class="answer-text">উত্তর লোড হচ্ছে...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Navigation Bar (Exactly 3 control buttons) -->
+            <footer class="navigation-bar">
+                <button class="nav-btn btn-secondary" id="btn-prev" aria-label="পূর্ববর্তী প্রশ্ন">
+                    <i class="fa-solid fa-chevron-left"></i> পূর্ববর্তী (Prev)
+                </button>
+                
+                <button class="nav-btn btn-primary" id="btn-home" aria-label="হোম স্ক্রীন">
+                    <i class="fa-solid fa-house"></i> হোম (Home)
+                </button>
+                
+                <button class="nav-btn btn-secondary" id="btn-next" aria-label="পরবর্তী প্রশ্ন">
+                    পরবর্তী (Next) <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
