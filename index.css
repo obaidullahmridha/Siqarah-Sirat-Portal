@@ -33,7 +33,7 @@
     --radius-xl: 32px;
 
     /* Fonts */
-    --font-bengali: 'Hind Siliguri', 'Noto Serif Bengali', sans-serif;
+    --font-bengali: 'Tiro Bangla', serif;
     --font-english: 'Outfit', sans-serif;
 }
 
@@ -510,85 +510,6 @@ body {
     font-family: var(--font-bengali);
 }
 
-/* Prompt Toggle Details */
-.prompt-toggle-btn {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-    background-color: rgba(5, 47, 27, 0.85);
-    border: 1px solid var(--accent-gold);
-    color: var(--text-light);
-    padding: 6px 12px;
-    font-size: 13px;
-    border-radius: 50px;
-    cursor: pointer;
-    backdrop-filter: blur(4px);
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    z-index: 8;
-    font-family: var(--font-english);
-}
-
-.prompt-toggle-btn:hover {
-    background-color: var(--primary-green);
-    color: var(--accent-gold);
-}
-
-/* Expandable Prompt Box */
-.prompt-box {
-    position: absolute;
-    bottom: -100%;
-    left: 0;
-    width: 100%;
-    background-color: rgba(5, 47, 27, 0.95);
-    border-top: 2px solid var(--accent-gold);
-    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-    padding: 16px 20px;
-    color: var(--text-light);
-    transition: bottom 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 9;
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.3);
-}
-
-.prompt-box.active {
-    bottom: 0;
-}
-
-.prompt-box-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--accent-gold);
-    font-family: var(--font-english);
-}
-
-.prompt-close {
-    background: none;
-    border: none;
-    color: var(--text-light);
-    cursor: pointer;
-    font-size: 16px;
-    opacity: 0.7;
-}
-
-.prompt-close:hover {
-    opacity: 1;
-    color: var(--accent-gold);
-}
-
-.prompt-content {
-    font-family: var(--font-english);
-    font-size: 13px;
-    line-height: 1.4;
-    max-height: 100px;
-    overflow-y: auto;
-    opacity: 0.9;
-}
 
 /* 6b. Right Pane: Content Display */
 .pane-content {

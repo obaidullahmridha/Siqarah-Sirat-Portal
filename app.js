@@ -34,13 +34,9 @@ const answerCard = document.getElementById('answer-card');
 const answerContentWrapper = document.getElementById('answer-content-wrapper');
 const btnRevealAnswer = document.getElementById('btn-reveal-answer');
 
-// Image & Prompt Elements
+// Image Elements
 const aiImage = document.getElementById('ai-image');
 const imageLoading = document.getElementById('image-loading');
-const btnPromptToggle = document.getElementById('btn-prompt-toggle');
-const btnPromptClose = document.getElementById('btn-prompt-close');
-const promptBox = document.getElementById('prompt-box');
-const promptContent = document.getElementById('prompt-content');
 
 // Custom Image Cache to prevent flickering
 const imageCache = new Map();
@@ -63,9 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Answer Reveal Listener
     btnRevealAnswer.addEventListener('click', toggleAnswer);
 
-    // Prompt Box Listeners
-    btnPromptToggle.addEventListener('click', openPromptBox);
-    btnPromptClose.addEventListener('click', closePromptBox);
+
 
     // Keyboard Navigation support
     document.addEventListener('keydown', handleKeyboardNavigation);
@@ -129,7 +123,6 @@ function switchScreen(fromScreen, toScreen) {
  * Return to the main home dashboard screen
  */
 function returnHome() {
-    closePromptBox();
     currentGroup = null;
     filteredQuestions = [];
     currentIndex = 0;
@@ -153,8 +146,7 @@ function loadQuestion(index) {
     
     const questionData = filteredQuestions[currentIndex];
     
-    // Close prompt box if open
-    closePromptBox();
+
 
     // 3a. Update Text Elements (with slide transition)
     const contentElements = [questionText, answerText, btnRevealAnswer, aiImage];
@@ -166,7 +158,6 @@ function loadQuestion(index) {
         // Set new values
         questionText.textContent = questionData.question;
         answerText.textContent = questionData.answer;
-        promptContent.textContent = questionData.image_prompt;
         
         // Collapse the answer box
         answerContentWrapper.classList.remove('revealed');
@@ -295,16 +286,7 @@ function navigatePrevious() {
     }
 }
 
-/**
- * Image Prompt details overlay panel
- */
-function openPromptBox() {
-    promptBox.classList.add('active');
-}
 
-function closePromptBox() {
-    promptBox.classList.remove('active');
-}
 
 /**
  * Handle hotkeys for accessibility and premium feel
