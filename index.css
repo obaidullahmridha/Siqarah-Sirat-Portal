@@ -374,6 +374,64 @@ body {
     background-color: var(--accent-gold);
 }
 
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.jump-container {
+    display: flex;
+    align-items: center;
+    background-color: var(--cream-card);
+    border: 1px solid var(--border-gold);
+    border-radius: 50px;
+    padding: 2px 4px 2px 10px;
+    box-shadow: 0 4px 10px rgba(10, 92, 54, 0.05);
+}
+
+.jump-input {
+    width: 45px;
+    border: none;
+    background: transparent;
+    font-family: var(--font-english);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-green);
+    outline: none;
+    text-align: center;
+}
+
+/* Hide HTML5 number spinners */
+.jump-input::-webkit-outer-spin-button,
+.jump-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.jump-input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.jump-btn {
+    background-color: var(--primary-green);
+    border: 1px solid var(--accent-gold);
+    color: var(--text-light);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    transition: all 0.2s ease;
+}
+
+.jump-btn:hover {
+    background-color: var(--accent-gold);
+    color: var(--primary-dark);
+}
+
 .progress-pill {
     background-color: var(--primary-green);
     color: var(--text-light);
@@ -384,6 +442,18 @@ body {
     border: 1px solid var(--accent-gold);
     font-family: var(--font-english);
     box-shadow: 0 4px 10px rgba(10, 92, 54, 0.2);
+}
+
+@media (max-width: 600px) {
+    .suggestion-header {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+    .header-right {
+        justify-content: center;
+        width: 100%;
+    }
 }
 
 .progress-container {

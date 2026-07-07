@@ -38,6 +38,10 @@ const btnRevealAnswer = document.getElementById('btn-reveal-answer');
 const aiImage = document.getElementById('ai-image');
 const imageLoading = document.getElementById('image-loading');
 
+// Jump Navigation Elements
+const inputJump = document.getElementById('input-jump');
+const btnJump = document.getElementById('btn-jump');
+
 // Custom Image Cache to prevent flickering
 const imageCache = new Map();
 
@@ -58,9 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Answer Reveal Listener
     btnRevealAnswer.addEventListener('click', toggleAnswer);
-
-
-
+    // Jump Navigation Listeners
+    btnJump.addEventListener('click', executeJump);
+    inputJump.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            executeJump();
+        }
+    });
     // Keyboard Navigation support
     document.addEventListener('keydown', handleKeyboardNavigation);
 });
@@ -94,6 +102,9 @@ function startStudy(group) {
         alert("কোন তথ্য পাওয়া যায়নি!");
         return;
     }
+
+    // Set maximum range for jump input
+    inputJump.max = filteredQuestions.length;
 
     // Switch screen with animation
     switchScreen(homeScreen, suggestionScreen);
@@ -158,6 +169,10 @@ function loadQuestion(index) {
         // Set new values
         questionText.textContent = questionData.question;
         answerText.textContent = questionData.answer;
+        
+        // Reset jump input value and set placeholder to current question index + 1
+        inputJump.value = '';
+        inputJump.placeholder = index + 1;
         
         // Collapse the answer box
         answerContentWrapper.classList.remove('revealed');
@@ -284,6 +299,20 @@ function navigatePrevious() {
     if (currentIndex > 0) {
         loadQuestion(currentIndex - 1);
     }
+}
+
+/**
+ * Jump to a specific question entered by the user
+ */
+function executeJump() {
+    const value = parseInt(inputJump.value, 10);
+    const total = filteredQuestions.length;
+    if (isNaN(value) || value < 1 || value > total) {
+        alert(`অনুগ্রহ করে ১ থেকে ${total}-এর মধ্যে একটি সঠিক নম্বর লিখুন!`);
+        inputJump.value = '';
+        return;
+    }
+    loadQuestion(value - 1);
 }
 
 
